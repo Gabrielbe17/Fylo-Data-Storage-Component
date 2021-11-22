@@ -1,0 +1,29 @@
+
+@forward 'variables';
+@use 'variables' as *;
+
+
+// Flex
+@mixin flex ($direction, $gap){
+    display: flex;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+// Grid
+@mixin grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+// Center
+@mixin flex-center ($flex-direction){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: center;
+    align-items: center;
+}
+// Background 
+@mixin data($size){
+    background-color: $DarkBlue;
+    border-radius: $size;
+}

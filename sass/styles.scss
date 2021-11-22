@@ -1,0 +1,129 @@
+
+// @use 'abstracts/variables' as var;
+@use 'abstracts/index' as *;
+html{
+    font-size: 14px;
+}
+body{
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    background: $VeryDarkBlue url(../images/bg-desktop.png) no-repeat center center;
+    background-size: cover;
+
+}
+// Main Container
+main{
+    min-height: 100vh;
+    @include flex-center(column);
+
+    .container{
+        align-items: flex-end;
+        max-width: 90%;
+        display: grid;
+        gap: 2em;
+        position: relative;
+
+        @media screen and (min-width:900px){
+            @include grid();
+            gap: 2em;
+        }
+    }
+    .data{
+        @include flex(column, 0);   
+        align-items: flex-start;
+        @include data(1.1em 43% 1.1em 1.1em);
+        padding: 3em;
+
+        &__list{
+            padding-left: 0;
+            margin: 1.8em 0 0 0;
+            list-style: none;
+            @include flex(row, 1em);
+            align-items: center;
+        }
+        &__icon{
+            background-color: $VeryDarkBlue;
+            padding: 1em 1em;
+            border-radius: .5em;
+        }
+
+        @media screen and (min-width:900px) {
+            padding: 4em 5em;
+        }
+    }
+}
+
+//Component
+.storage{
+    @include data(1.1em 1.1em 1.1em 1.1em);
+    padding: 1.5em 3em 3em 3em;
+    position: relative;
+
+    p{  
+        color: $PaleBlue;
+    }
+    .span{
+        font-weight: 700;
+    }
+
+    &__bar{
+        background-color: rgba($VeryDarkBlue, .65);
+        border-radius: 6em;
+        padding: .18em;
+    }
+    &__bar--active{
+        background: linear-gradient(#ffa399, #ff4d97);
+        width: 70%;
+        height: 1em;
+        border-radius: 5em;
+        position: relative;
+
+        .point{
+            height: .95em;
+            width: .85em;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            right: .15em;
+        }
+    }
+
+    .info{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left{
+        width: 60%;
+        border-radius: 1em;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        
+        h1{
+            text-align: center;
+        }
+        .span{
+            font-size: 1rem;
+            color: $GrayishBlue;
+            text-transform: uppercase;
+        }
+
+        @media screen and (min-width:900px) {   
+            top: -1em;
+            left: 80%;
+            width: 30%;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
